@@ -16,8 +16,8 @@ spec:
     spec:
       containers:
         - name: fastapi-pod
-          image: bayardozelaya/vibradev:latest
-          imagePullPolicy: Always
+          image: fastapi-app:latest
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
           resources:

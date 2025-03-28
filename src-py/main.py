@@ -1,5 +1,7 @@
 import os
 from fastapi import FastAPI
+from modules.application_calls import ApplicationCalls
+
 
 app = FastAPI()
 
@@ -34,3 +36,13 @@ async def podname():
 @app.get("/greeting")
 async def greeting(name: str):
     return os.getenv("GREETING", "Hello") + " " + name
+
+application_calls = ApplicationCalls()
+
+@app.get("/call-service")
+async def call_service(service_name: str):
+    try:
+        message = await application_calls.call_go_service(f'http://{service_name}')
+        return {"message_from_service": message}
+    except Exception:
+        return {"error": "Service not available"}, 503
