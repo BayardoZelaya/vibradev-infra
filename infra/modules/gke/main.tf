@@ -1,9 +1,9 @@
 resource "google_container_cluster" "primary" {
-  name                     = "dev-gke-cluster"
-  location                 = var.gcp_region
+  name                     = var.cluster_name
+  location                 = var.gcp_zone
   remove_default_node_pool = true
-  network                  = google_compute_network.gke_network.id
-  subnetwork               = google_compute_subnetwork.gke_subnet.id
+  network                  = var.vpc_id
+  subnetwork               = var.subnet_id
   initial_node_count       = 1
   deletion_protection      = false
 
@@ -18,7 +18,7 @@ resource "google_container_cluster" "primary" {
 resource "google_container_node_pool" "primary_nodes" {
   cluster    = google_container_cluster.primary.name
   location   = google_container_cluster.primary.location
-  name       = "primary-node-pool"
+  name       = "${google_container_cluster.primary.name}-node-pool"
   node_count = 1
   node_config {
     machine_type = "e2-medium"

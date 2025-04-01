@@ -1,8 +1,3 @@
-variable "gcp_project_id" {
-  description = "The GCP project ID"
-  type        = string
-}
-
 variable "network_name" {
   description = "The name of the network"
   type        = string
@@ -21,5 +16,5 @@ variable "gcp_zone" {
 variable "gcp_cidr_range" {
   description = "The CIDR range for the subnetwork"
   type        = string
-  default = "10.0.0.0/24"
+  default     = "10.0.0.0/24"
 }
