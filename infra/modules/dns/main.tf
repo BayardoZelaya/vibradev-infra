@@ -3,3 +3,4 @@ resource "google_dns_managed_zone" "primary" {
   dns_name    = var.gcp_dns_zone_dns_name
   description = "Managed by Terraform"
 }
+

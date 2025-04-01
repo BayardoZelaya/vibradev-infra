@@ -17,3 +17,10 @@ module "gke_cluster" {
   gcp_subnet_id    = module.gke_vpc.subnet_id
 
 }
+
+module "gke_dns" {
+  source = "./modules/dns"
+
+  gcp_dns_zone_name     = var.gcp_dns_zone_name
+  gcp_dns_zone_dns_name = var.gcp_dns_zone_dns_name
+}

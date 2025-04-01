@@ -18,7 +18,7 @@ resource "google_container_cluster" "primary" {
 resource "google_container_node_pool" "primary_nodes" {
   cluster    = google_container_cluster.primary.name
   location   = google_container_cluster.primary.location
-  name       = "${google_container_cluster.primary.name}-np"
+  name       = "${var.gcp_cluster_name}-np"
   node_count = 1
   node_config {
     machine_type = "e2-medium"

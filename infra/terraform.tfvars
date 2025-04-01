@@ -6,3 +6,6 @@ gcp_vpc_name   = "vibra-dev"
 gcp_cidr_range = "10.0.0.0/16"
 
 gcp_cluster_name = "vd-dev"
+
+gcp_dns_zone_name     = "vibradev-com-zone"
+gcp_dns_zone_dns_name = "vibradev.com."
