@@ -1,9 +1,9 @@
 resource "google_container_cluster" "primary" {
-  name                     = var.cluster_name
+  name                     = "${var.gcp_cluster_name}-cluster"
   location                 = var.gcp_zone
   remove_default_node_pool = true
-  network                  = var.vpc_id
-  subnetwork               = var.subnet_id
+  network                  = var.gcp_vpc_id
+  subnetwork               = var.gcp_subnet_id
   initial_node_count       = 1
   deletion_protection      = false
 
@@ -18,7 +18,7 @@ resource "google_container_cluster" "primary" {
 resource "google_container_node_pool" "primary_nodes" {
   cluster    = google_container_cluster.primary.name
   location   = google_container_cluster.primary.location
-  name       = "${google_container_cluster.primary.name}-node-pool"
+  name       = "${var.gcp_cluster_name}-np"
   node_count = 1
   node_config {
     machine_type = "e2-medium"
