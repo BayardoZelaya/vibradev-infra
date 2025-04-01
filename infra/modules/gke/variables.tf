@@ -1,8 +1,3 @@
-variable "gcp_project_id" {
-  description = "The GCP project ID"
-  type        = string
-}
-
 variable "gcp_region" {
   description = "The GCP region to create the network in"
   type        = string
@@ -13,17 +8,17 @@ variable "gcp_zone" {
   type        = string
 }
 
-variable "vpc_id" {
+variable "gcp_vpc_id" {
   description = "The ID of the network"
   type        = string
 }
 
-variable "subnet_id" {
+variable "gcp_subnet_id" {
   description = "The ID of the subnetwork"
   type        = string
 }
 
-variable "cluster_name" {
+variable "gcp_cluster_name" {
   description = "The name of the GKE cluster"
   type        = string
 }

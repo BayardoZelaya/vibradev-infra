@@ -6,3 +6,14 @@ module "gke_vpc" {
   gcp_cidr_range = var.gcp_cidr_range
   gcp_zone       = var.gcp_zone
 }
+
+module "gke_cluster" {
+  source = "./modules/gke"
+
+  gcp_cluster_name = var.gcp_cluster_name
+  gcp_region       = var.gcp_region
+  gcp_zone         = var.gcp_zone
+  gcp_vpc_id       = module.gke_vpc.vpc_id
+  gcp_subnet_id    = module.gke_vpc.subnet_id
+
+}
