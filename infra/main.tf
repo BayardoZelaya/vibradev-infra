@@ -9,7 +9,6 @@ module "gke_vpc" {
 
 module "gke_cluster" {
   source = "./modules/gke"
-  count  = 0
 
   gcp_cluster_name = var.gcp_cluster_name
   gcp_region       = var.gcp_region
