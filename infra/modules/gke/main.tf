@@ -25,6 +25,7 @@ resource "google_container_node_pool" "primary_nodes" {
     preemptible  = true
     oauth_scopes = [
       "https://www.googleapis.com/auth/cloud-platform",
+      "https://www.googleapis.com/auth/devstorage.read_only",
     ]
   }
   autoscaling {
