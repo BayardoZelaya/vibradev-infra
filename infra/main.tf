@@ -23,4 +23,5 @@ module "gke_dns" {
 
   gcp_dns_zone_name     = var.gcp_dns_zone_name
   gcp_dns_zone_dns_name = var.gcp_dns_zone_dns_name
+  gcp_env               = var.gcp_env
 }

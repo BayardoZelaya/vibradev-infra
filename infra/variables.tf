@@ -34,3 +34,8 @@ variable "gcp_dns_zone_dns_name" {
   description = "The DNS name of the zone to create"
   type        = string
 }
+
+variable "gcp_env" {
+  description = "The environment name"
+  type        = string
+}

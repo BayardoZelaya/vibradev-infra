@@ -9,3 +9,4 @@ gcp_cluster_name = "vd-dev"
 
 gcp_dns_zone_name     = "vibradev-com-zone"
 gcp_dns_zone_dns_name = "vibradev.com."
+gcp_env = "dev-test"
