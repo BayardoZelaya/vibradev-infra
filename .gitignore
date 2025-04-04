@@ -1,5 +1,3 @@
-src/__pycache__/
-src/*.pyc
 infra/.terraform
 infra/.terraform.lock.hcl
 
