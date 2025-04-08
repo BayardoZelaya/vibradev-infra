@@ -13,6 +13,12 @@ resource "google_container_cluster" "primary" {
     enabled  = true
     provider = "CALICO"
   }
+
+  addons_config {
+    http_load_balancing {
+      disabled = false
+    }
+  }
 }
 
 resource "google_container_node_pool" "primary_nodes" {
