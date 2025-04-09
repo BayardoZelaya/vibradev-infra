@@ -33,9 +33,10 @@ resource "google_container_node_pool" "primary_nodes" {
       "https://www.googleapis.com/auth/cloud-platform",
       "https://www.googleapis.com/auth/devstorage.read_only",
     ]
+    tags = var.gcp_network_target_tags
   }
   autoscaling {
     min_node_count = 1
-    max_node_count = 1
+    max_node_count = 3
   }
 }

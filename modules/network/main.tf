@@ -22,3 +22,15 @@ resource "google_compute_firewall" "allow_network" {
   source_ranges = var.gcp_source_ranges
 
 }
+
+resource "google_compute_firewall" "allow_lb" {
+  name = "${var.network_name}-allow-lb"
+  network = google_compute_network.gke_vpc.id
+  allow {
+    protocol = "tcp"
+    ports    = ["80", "443"]
+  }
+
+  source_ranges = var.gcp_source_ranges
+  target_tags = var.gcp_network_target_tags
+}

@@ -22,3 +22,8 @@ variable "gcp_cluster_name" {
   description = "The name of the GKE cluster"
   type        = string
 }
+
+variable "gcp_network_target_tags" {
+  description = "The target tags for the firewall rule"
+  type        = list(string)
+}

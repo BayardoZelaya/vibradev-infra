@@ -43,5 +43,9 @@ variable "gcp_env" {
 variable "gcp_source_ranges" {
   description = "The source ranges for the firewall rule"
   type        = list(string)
-  
+}
+
+variable "gcp_network_target_tags" {
+  description = "The target tags for the firewall rule"
+  type        = list(string)
 }
