@@ -4,6 +4,7 @@ gcp_zone       = "us-central1-a"
 
 gcp_vpc_name   = "vibra-dev"
 gcp_cidr_range = "10.0.0.0/16"
+gcp_source_ranges = [ "162.83.212.230" ]
 
 gcp_cluster_name = "vd-dev"
 

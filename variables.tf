@@ -39,3 +39,9 @@ variable "gcp_env" {
   description = "The environment name"
   type        = string
 }
+
+variable "gcp_source_ranges" {
+  description = "The source ranges for the firewall rule"
+  type        = list(string)
+  
+}

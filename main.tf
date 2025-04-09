@@ -5,6 +5,7 @@ module "gke_vpc" {
   gcp_region     = var.gcp_region
   gcp_cidr_range = var.gcp_cidr_range
   gcp_zone       = var.gcp_zone
+  gcp_source_ranges = var.gcp_source_ranges
 }
 
 module "gke_cluster" {

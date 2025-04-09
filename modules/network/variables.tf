@@ -18,3 +18,8 @@ variable "gcp_cidr_range" {
   type        = string
   default     = "10.0.0.0/24"
 }
+
+variable "gcp_source_ranges" {
+  description = "The source ranges for the firewall rule"
+  type        = list(string)
+}
