@@ -17,7 +17,7 @@ resource "google_dns_record_set" "vibradev-py" {
   managed_zone = google_dns_managed_zone.primary.name
   type         = "A"
   ttl          = 300
-  rrdatas      = ["34.120.119.252"]
+  rrdatas      = ["34.8.60.65"]
 }
 
 resource "google_dns_record_set" "go-app" {
@@ -25,6 +25,6 @@ resource "google_dns_record_set" "go-app" {
   managed_zone = google_dns_managed_zone.primary.name
   type         = "A"
   ttl          = 300
-  rrdatas      = ["34.110.214.252"]
+  rrdatas      = ["34.149.191.221"]
 
 }
